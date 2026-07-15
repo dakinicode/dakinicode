@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,6 +30,10 @@ html{
 
 scroll-behavior:smooth;
 
+overflow-x:clip;
+
+max-width:100%;
+
 }
 
 
@@ -41,7 +45,13 @@ color:white;
 
 font-family:'Raleway',sans-serif;
 
-overflow-x:hidden;
+overflow-x:clip;
+
+max-width:100%;
+
+overscroll-behavior-x:none;
+
+position:relative;
 
 }
 
@@ -418,6 +428,10 @@ align-items:center;
 
 position:relative;
 
+overflow:hidden;
+
+border-radius:35px;
+
 }
 
 
@@ -494,6 +508,10 @@ opacity:1;
 
 position:absolute;
 
+inset:0;
+
+margin:auto;
+
 max-width:100%;
 
 max-height:100%;
@@ -504,17 +522,13 @@ height:auto;
 
 object-fit:contain;
 
-border-radius:35px;
+border-radius:0;
 
 
 opacity:0;
 
 
-transform:
-
-translateX(80px)
-
-scale(.96);
+transform:scale(.98);
 
 
 filter:
@@ -523,18 +537,18 @@ brightness(.9)
 
 contrast(1.05)
 
-saturate(.9)
-
-drop-shadow(0 0 40px rgba(255,255,255,.25));
+saturate(.9);
 
 
 transition:
 
-opacity 1.8s ease,
+opacity 1.2s ease,
 
-transform 1.8s ease,
+transform 1.2s ease,
 
-filter 1.8s ease;
+filter 1.2s ease;
+
+pointer-events:none;
 
 }
 
@@ -545,11 +559,7 @@ filter 1.8s ease;
 opacity:1;
 
 
-transform:
-
-translateX(0)
-
-scale(1.02);
+transform:scale(1);
 
 
 filter:
@@ -558,9 +568,9 @@ brightness(.98)
 
 contrast(1.08)
 
-saturate(.95)
+saturate(.95);
 
-drop-shadow(0 0 65px rgba(255,255,255,.4));
+pointer-events:auto;
 
 }
 
@@ -1001,22 +1011,43 @@ width:33%;
 @media(max-width:768px){
 
 
+html,body{
+
+overflow-x:clip;
+
+max-width:100%;
+
+overscroll-behavior-x:none;
+
+touch-action:pan-y;
+
+}
+
+
 .hero{
 
 height:100svh;
 
 padding:20px;
 
+max-width:100%;
+
+overflow:hidden;
+
 }
 
 
 .hero-title{
 
-font-size:clamp(2.8rem,13vw,5rem);
+font-size:clamp(2.6rem,11vw,4.5rem);
 
-letter-spacing:.1em;
+letter-spacing:.08em;
 
 text-align:center;
+
+max-width:100%;
+
+overflow:hidden;
 
 }
 
@@ -1038,11 +1069,17 @@ left:50%;
 
 width:100%;
 
+max-width:100%;
+
+padding:0 12px;
+
 text-align:center;
 
 font-size:.55rem;
 
-letter-spacing:.45em;
+letter-spacing:.35em;
+
+box-sizing:border-box;
 
 }
 
@@ -1089,11 +1126,19 @@ margin-bottom:90px;
 
 animation:none;
 
+overflow:hidden;
+
+width:100%;
+
+max-width:100%;
+
 }
 
 
 
-.gallery-wrapper::before{
+.gallery-wrapper::before,
+
+.gallery-frame::before{
 
 display:none;
 
@@ -1105,9 +1150,13 @@ display:none;
 
 width:100%;
 
+max-width:100%;
+
 height:380px;
 
-gap:12px;
+gap:10px;
+
+overflow:hidden;
 
 }
 
@@ -1117,21 +1166,37 @@ gap:12px;
 
 width:33.33%;
 
+overflow:hidden;
+
+border-radius:22px;
+
 }
 
 
 
 .gallery-frame:nth-child(2){
 
-transform:translateY(-15px) scale(1.02);
+transform:none;
 
 }
 
 
 
-.gallery-frame img{
+.gallery-frame img,
 
-border-radius:35px;
+.gallery-frame img.active{
+
+border-radius:0;
+
+filter:
+
+brightness(.96)
+
+contrast(1.05)
+
+saturate(.93);
+
+transform:none;
 
 }
 
@@ -1312,33 +1377,33 @@ CONCEPTUAL PORTRAIT
 
 <div class="gallery-frame">
 
-<img src="images/1.jpg" class="active">
+<img src="images/web/1.jpg" class="active" fetchpriority="high" decoding="async" alt="">
 
-<img src="images/4.jpg">
+<img src="images/web/4.jpg" loading="lazy" decoding="async" alt="">
 
-<img src="images/7.jpg">
-
-</div>
-
-
-<div class="gallery-frame">
-
-<img src="images/2.jpg" class="active">
-
-<img src="images/5.jpg">
-
-<img src="images/8.jpg">
+<img src="images/web/7.jpg" loading="lazy" decoding="async" alt="">
 
 </div>
 
 
 <div class="gallery-frame">
 
-<img src="images/3.jpg" class="active">
+<img src="images/web/2.jpg" class="active" fetchpriority="high" decoding="async" alt="">
 
-<img src="images/6.jpg">
+<img src="images/web/5.jpg" loading="lazy" decoding="async" alt="">
 
-<img src="images/1.jpg">
+<img src="images/web/8.jpg" loading="lazy" decoding="async" alt="">
+
+</div>
+
+
+<div class="gallery-frame">
+
+<img src="images/web/3.jpg" class="active" fetchpriority="high" decoding="async" alt="">
+
+<img src="images/web/6.jpg" loading="lazy" decoding="async" alt="">
+
+<img src="images/web/1.jpg" loading="lazy" decoding="async" alt="">
 
 </div>
 
