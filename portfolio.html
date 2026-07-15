@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -185,9 +185,7 @@ justify-content:center;
 
 position:relative;
 
-overflow:hidden;
-
-border-radius:18px;
+overflow:visible;
 
 }
 
@@ -442,16 +440,37 @@ width:100%;
 
 max-width:420px;
 
-overflow:hidden;
+overflow:visible;
 
 }
 
 
-.series::before,
+.series::before{
+
+display:block;
+
+width:160%;
+
+height:160%;
+
+left:-30%;
+
+top:-30%;
+
+opacity:.7;
+
+filter:blur(55px);
+
+}
+
 
 .image-box::after{
 
-display:none;
+display:block;
+
+inset:-28px;
+
+filter:blur(40px);
 
 }
 
@@ -460,9 +479,7 @@ display:none;
 
 height:auto;
 
-overflow:hidden;
-
-border-radius:22px;
+overflow:visible;
 
 }
 
@@ -481,7 +498,9 @@ brightness(.95)
 
 contrast(1.05)
 
-saturate(.92);
+saturate(.92)
+
+drop-shadow(0 0 36px rgba(255,255,255,.28));
 
 }
 
@@ -492,11 +511,13 @@ transform:none;
 
 filter:
 
-brightness(.95)
+brightness(.97)
 
-contrast(1.05)
+contrast(1.06)
 
-saturate(.92);
+saturate(.93)
+
+drop-shadow(0 0 48px rgba(255,255,255,.34));
 
 }
 

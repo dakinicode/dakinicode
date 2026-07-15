@@ -428,9 +428,7 @@ align-items:center;
 
 position:relative;
 
-overflow:hidden;
-
-border-radius:35px;
+overflow:visible;
 
 }
 
@@ -522,7 +520,7 @@ height:auto;
 
 object-fit:contain;
 
-border-radius:0;
+border-radius:35px;
 
 
 opacity:0;
@@ -537,16 +535,18 @@ brightness(.9)
 
 contrast(1.05)
 
-saturate(.9);
+saturate(.9)
+
+drop-shadow(0 0 40px rgba(255,255,255,.25));
 
 
 transition:
 
-opacity 1.2s ease,
+opacity 1.4s ease,
 
-transform 1.2s ease,
+transform 1.4s ease,
 
-filter 1.2s ease;
+filter 1.4s ease;
 
 pointer-events:none;
 
@@ -559,7 +559,7 @@ pointer-events:none;
 opacity:1;
 
 
-transform:scale(1);
+transform:scale(1.02);
 
 
 filter:
@@ -568,7 +568,9 @@ brightness(.98)
 
 contrast(1.08)
 
-saturate(.95);
+saturate(.95)
+
+drop-shadow(0 0 65px rgba(255,255,255,.4));
 
 pointer-events:auto;
 
@@ -1126,7 +1128,7 @@ margin-bottom:90px;
 
 animation:none;
 
-overflow:hidden;
+overflow:visible;
 
 width:100%;
 
@@ -1136,11 +1138,25 @@ max-width:100%;
 
 
 
-.gallery-wrapper::before,
+.gallery-wrapper::before{
+
+display:none;
+
+}
+
+
 
 .gallery-frame::before{
 
-display:none;
+display:block;
+
+width:140%;
+
+height:140%;
+
+opacity:.55;
+
+filter:blur(50px);
 
 }
 
@@ -1156,7 +1172,7 @@ height:380px;
 
 gap:10px;
 
-overflow:hidden;
+overflow:visible;
 
 }
 
@@ -1166,9 +1182,7 @@ overflow:hidden;
 
 width:33.33%;
 
-overflow:hidden;
-
-border-radius:22px;
+overflow:visible;
 
 }
 
@@ -1176,27 +1190,33 @@ border-radius:22px;
 
 .gallery-frame:nth-child(2){
 
-transform:none;
+transform:translateY(-10px) scale(1.02);
 
 }
 
 
 
-.gallery-frame img,
+.gallery-frame img{
+
+border-radius:22px;
+
+}
+
+
 
 .gallery-frame img.active{
 
-border-radius:0;
+border-radius:22px;
 
 filter:
 
-brightness(.96)
+brightness(.98)
 
-contrast(1.05)
+contrast(1.06)
 
-saturate(.93);
+saturate(.94)
 
-transform:none;
+drop-shadow(0 0 36px rgba(255,255,255,.32));
 
 }
 
