@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,8 +27,6 @@ html,body{
 
 width:100%;
 height:100%;
-max-width:100%;
-overflow-x:clip;
 
 }
 
@@ -42,8 +40,6 @@ color:white;
 font-family:'Raleway',sans-serif;
 
 overflow:hidden;
-
-overscroll-behavior-x:none;
 
 }
 
@@ -184,8 +180,6 @@ align-items:center;
 justify-content:center;
 
 position:relative;
-
-overflow:visible;
 
 }
 
@@ -380,24 +374,11 @@ translateY(-5px);
 
 @media(max-width:768px){
 
-html,body{
-
-overflow-x:clip;
-
-max-width:100%;
-
-overscroll-behavior-x:none;
-
-touch-action:pan-y;
-
-}
-
-
 body{
 
 overflow-y:auto;
 
-overflow-x:clip;
+overflow-x:hidden;
 
 }
 
@@ -408,18 +389,12 @@ height:auto;
 
 padding:30px 0 120px;
 
-max-width:100%;
-
-overflow-x:clip;
-
 }
 
 
 .series-container{
 
-width:min(92%,420px);
-
-max-width:100%;
+width:92%;
 
 flex-direction:column;
 
@@ -428,8 +403,6 @@ align-items:center;
 gap:50px;
 
 padding-top:30px;
-
-overflow:visible;
 
 }
 
@@ -440,46 +413,12 @@ width:100%;
 
 max-width:420px;
 
-overflow:visible;
-
-}
-
-
-.series::before{
-
-display:block;
-
-width:160%;
-
-height:160%;
-
-left:-30%;
-
-top:-30%;
-
-opacity:.7;
-
-filter:blur(55px);
-
-}
-
-
-.image-box::after{
-
-display:block;
-
-inset:-28px;
-
-filter:blur(40px);
-
 }
 
 
 .image-box{
 
 height:auto;
-
-overflow:visible;
 
 }
 
@@ -490,34 +429,7 @@ width:100%;
 
 height:auto;
 
-border-radius:22px;
-
-filter:
-
-brightness(.95)
-
-contrast(1.05)
-
-saturate(.92)
-
-drop-shadow(0 0 36px rgba(255,255,255,.28));
-
-}
-
-
-.series:hover img{
-
-transform:none;
-
-filter:
-
-brightness(.97)
-
-contrast(1.06)
-
-saturate(.93)
-
-drop-shadow(0 0 48px rgba(255,255,255,.34));
+border-radius:35px;
 
 }
 
@@ -612,7 +524,7 @@ letter-spacing:.25em;
 
 <div class="image-box">
 
-<img src="images/web/anna/a1.jpg" alt="Anna" loading="eager" decoding="async">
+<img src="images/web/anna/a1.jpg" alt="Anna">
 
 </div>
 
@@ -644,7 +556,7 @@ NUDE ART SERIES
 
 <div class="image-box">
 
-<img src="images/web/alina/c1.jpg" alt="Alina" loading="eager" decoding="async">
+<img src="images/web/alina/c1.jpg" alt="Alina">
 
 </div>
 
@@ -676,7 +588,7 @@ IDENTITY PROJECT
 
 <div class="image-box">
 
-<img src="images/web/tim/m1.jpg" alt="Tim" loading="eager" decoding="async">
+<img src="images/web/tim/m1.jpg" alt="Tim">
 
 </div>
 

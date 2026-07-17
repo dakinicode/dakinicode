@@ -30,10 +30,6 @@ html{
 
 scroll-behavior:smooth;
 
-overflow-x:clip;
-
-max-width:100%;
-
 }
 
 
@@ -45,13 +41,7 @@ color:white;
 
 font-family:'Raleway',sans-serif;
 
-overflow-x:clip;
-
-max-width:100%;
-
-overscroll-behavior-x:none;
-
-position:relative;
+overflow-x:hidden;
 
 }
 
@@ -428,8 +418,6 @@ align-items:center;
 
 position:relative;
 
-overflow:visible;
-
 }
 
 
@@ -506,10 +494,6 @@ opacity:1;
 
 position:absolute;
 
-inset:0;
-
-margin:auto;
-
 max-width:100%;
 
 max-height:100%;
@@ -526,7 +510,11 @@ border-radius:35px;
 opacity:0;
 
 
-transform:scale(.98);
+transform:
+
+translateX(80px)
+
+scale(.96);
 
 
 filter:
@@ -542,13 +530,11 @@ drop-shadow(0 0 40px rgba(255,255,255,.25));
 
 transition:
 
-opacity 1.4s ease,
+opacity 1.8s ease,
 
-transform 1.4s ease,
+transform 1.8s ease,
 
-filter 1.4s ease;
-
-pointer-events:none;
+filter 1.8s ease;
 
 }
 
@@ -559,7 +545,11 @@ pointer-events:none;
 opacity:1;
 
 
-transform:scale(1.02);
+transform:
+
+translateX(0)
+
+scale(1.02);
 
 
 filter:
@@ -571,8 +561,6 @@ contrast(1.08)
 saturate(.95)
 
 drop-shadow(0 0 65px rgba(255,255,255,.4));
-
-pointer-events:auto;
 
 }
 
@@ -1013,43 +1001,22 @@ width:33%;
 @media(max-width:768px){
 
 
-html,body{
-
-overflow-x:clip;
-
-max-width:100%;
-
-overscroll-behavior-x:none;
-
-touch-action:pan-y;
-
-}
-
-
 .hero{
 
 height:100svh;
 
 padding:20px;
 
-max-width:100%;
-
-overflow:hidden;
-
 }
 
 
 .hero-title{
 
-font-size:clamp(2.6rem,11vw,4.5rem);
+font-size:clamp(2.8rem,13vw,5rem);
 
-letter-spacing:.08em;
+letter-spacing:.1em;
 
 text-align:center;
-
-max-width:100%;
-
-overflow:hidden;
 
 }
 
@@ -1071,17 +1038,11 @@ left:50%;
 
 width:100%;
 
-max-width:100%;
-
-padding:0 12px;
-
 text-align:center;
 
 font-size:.55rem;
 
-letter-spacing:.35em;
-
-box-sizing:border-box;
+letter-spacing:.45em;
 
 }
 
@@ -1128,12 +1089,6 @@ margin-bottom:90px;
 
 animation:none;
 
-overflow:visible;
-
-width:100%;
-
-max-width:100%;
-
 }
 
 
@@ -1146,33 +1101,13 @@ display:none;
 
 
 
-.gallery-frame::before{
-
-display:block;
-
-width:140%;
-
-height:140%;
-
-opacity:.55;
-
-filter:blur(50px);
-
-}
-
-
-
 .gallery{
 
 width:100%;
 
-max-width:100%;
-
 height:380px;
 
-gap:10px;
-
-overflow:visible;
+gap:12px;
 
 }
 
@@ -1182,15 +1117,13 @@ overflow:visible;
 
 width:33.33%;
 
-overflow:visible;
-
 }
 
 
 
 .gallery-frame:nth-child(2){
 
-transform:translateY(-10px) scale(1.02);
+transform:translateY(-15px) scale(1.02);
 
 }
 
@@ -1198,25 +1131,7 @@ transform:translateY(-10px) scale(1.02);
 
 .gallery-frame img{
 
-border-radius:22px;
-
-}
-
-
-
-.gallery-frame img.active{
-
-border-radius:22px;
-
-filter:
-
-brightness(.98)
-
-contrast(1.06)
-
-saturate(.94)
-
-drop-shadow(0 0 36px rgba(255,255,255,.32));
+border-radius:35px;
 
 }
 
@@ -1397,33 +1312,33 @@ CONCEPTUAL PORTRAIT
 
 <div class="gallery-frame">
 
-<img src="images/web/1.jpg" class="active" fetchpriority="high" decoding="async" alt="">
+<img src="images/web/1.jpg" class="active">
 
-<img src="images/web/4.jpg" loading="lazy" decoding="async" alt="">
+<img src="images/web/4.jpg">
 
-<img src="images/web/7.jpg" loading="lazy" decoding="async" alt="">
-
-</div>
-
-
-<div class="gallery-frame">
-
-<img src="images/web/2.jpg" class="active" fetchpriority="high" decoding="async" alt="">
-
-<img src="images/web/5.jpg" loading="lazy" decoding="async" alt="">
-
-<img src="images/web/8.jpg" loading="lazy" decoding="async" alt="">
+<img src="images/web/7.jpg">
 
 </div>
 
 
 <div class="gallery-frame">
 
-<img src="images/web/3.jpg" class="active" fetchpriority="high" decoding="async" alt="">
+<img src="images/web/2.jpg" class="active">
 
-<img src="images/web/6.jpg" loading="lazy" decoding="async" alt="">
+<img src="images/web/5.jpg">
 
-<img src="images/web/1.jpg" loading="lazy" decoding="async" alt="">
+<img src="images/web/8.jpg">
+
+</div>
+
+
+<div class="gallery-frame">
+
+<img src="images/web/3.jpg" class="active">
+
+<img src="images/web/6.jpg">
+
+<img src="images/web/1.jpg">
 
 </div>
 
