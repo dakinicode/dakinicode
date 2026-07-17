@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>DAKINICODE PHOTOGRAPHY — Nude Art & Conceptual Portrait</title>
 
@@ -69,11 +69,11 @@ height:100svh;
 
 height:100dvh;
 
-min-height:-webkit-fill-available;
-
 max-height:100dvh;
 
 display:flex;
+
+flex-direction:column;
 
 justify-content:center;
 
@@ -83,6 +83,35 @@ position:relative;
 
 overflow:hidden;
 
+padding:
+
+max(12px, env(safe-area-inset-top))
+
+16px
+
+max(12px, env(safe-area-inset-bottom));
+
+box-sizing:border-box;
+
+}
+
+
+.hero-brand{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+max-width:100%;
+
+z-index:1;
+
 }
 
 
@@ -90,11 +119,15 @@ overflow:hidden;
 
 font-weight:100;
 
-font-size:clamp(4rem,10vw,11rem);
+font-size:clamp(3.2rem, 9vw, 11rem);
+
+line-height:1;
 
 text-transform:uppercase;
 
 color:rgba(255,255,255,.95);
+
+max-width:100%;
 
 
 text-shadow:
@@ -115,6 +148,8 @@ display:inline-flex;
 
 align-items:center;
 
+justify-content:center;
+
 letter-spacing:.18em;
 
 gap:.18em;
@@ -125,28 +160,26 @@ gap:.18em;
 
 .hero-title .o{
 
-display:inline-block;
+display:block;
 
-/* match capital letter height; 1cap with em fallback */
-width:.72em;
+/* optical match to Raleway Thin capitals — same on all browsers */
+width:.7em;
 
-height:.72em;
-
-width:1cap;
-
-height:1cap;
+height:.7em;
 
 box-sizing:border-box;
 
-border:1px solid rgba(255,255,255,.85);
+border:0.045em solid rgba(255,255,255,.85);
 
 border-radius:50%;
 
 margin:0;
 
+padding:0;
+
 position:relative;
 
-flex-shrink:0;
+flex:0 0 auto;
 
 align-self:center;
 
@@ -203,19 +236,25 @@ z-index:-1;
 
 animation:eclipse 5s ease-in-out infinite;
 
+pointer-events:none;
+
 }
 
 
 
 .subtitle{
 
-position:absolute;
+position:static;
 
-bottom:58.7%;
+bottom:auto;
 
-left:35.5%;
+left:auto;
 
-transform:translateX(-50%);
+transform:none;
+
+order:-1;
+
+margin:0 0 clamp(.35rem,1.2vw,.9rem);
 
 font-weight:200;
 
@@ -226,6 +265,10 @@ text-transform:uppercase;
 color:rgba(255,255,255,.42);
 
 font-size:clamp(.48rem,1.3vw,.85rem);
+
+text-align:center;
+
+max-width:100%;
 
 
 text-shadow:
@@ -242,7 +285,7 @@ text-shadow:
 
 position:absolute;
 
-bottom:9%;
+bottom:max(8%, calc(16px + env(safe-area-inset-bottom)));
 
 left:50%;
 
@@ -263,6 +306,8 @@ letter-spacing:.5em;
 text-transform:uppercase;
 
 transition:.6s;
+
+z-index:2;
 
 }
 
@@ -1037,93 +1082,57 @@ height:100svh;
 
 height:100dvh;
 
-min-height:-webkit-fill-available;
-
 max-height:100dvh;
 
-display:flex;
+padding:
 
-flex-direction:column;
+max(16px, env(safe-area-inset-top))
 
-justify-content:center;
+18px
 
-align-items:center;
-
-padding:max(16px,env(safe-area-inset-top)) 20px max(20px,env(safe-area-inset-bottom));
-
-overflow:hidden;
-
-box-sizing:border-box;
+max(20px, env(safe-area-inset-bottom));
 
 }
 
 
 .hero-title{
 
-font-size:clamp(2.8rem,12vw,5rem);
+font-size:clamp(2.4rem, 11vw, 4.2rem);
 
 letter-spacing:.1em;
 
 gap:.1em;
-
-text-align:center;
-
-flex:0 0 auto;
-
-max-width:100%;
 
 }
 
 
 .hero-title .o{
 
-width:.72em;
+width:.7em;
 
-height:.72em;
+height:.7em;
 
-width:1cap;
-
-height:1cap;
+border-width:0.045em;
 
 }
 
 
 .subtitle{
 
-position:relative;
-
-bottom:auto;
-
-left:auto;
-
-transform:none;
-
-width:100%;
-
-text-align:center;
-
 font-size:.55rem;
 
-letter-spacing:.45em;
+letter-spacing:.4em;
 
-margin-top:1.25rem;
+margin:0 0 1rem;
 
-flex:0 0 auto;
+padding:0 8px;
 
 }
 
 
 .portfolio-button{
 
-position:relative;
-
-bottom:auto;
-
-left:auto;
-
-transform:none;
-
-margin-top:auto;
+bottom:max(24px, calc(18px + env(safe-area-inset-bottom)));
 
 padding:14px 30px;
 
@@ -1131,14 +1140,12 @@ font-size:.7rem;
 
 letter-spacing:.35em;
 
-flex:0 0 auto;
-
 }
 
 
 .portfolio-button:hover{
 
-transform:translateY(-5px);
+transform:translateX(-50%) translateY(-5px);
 
 }
 
@@ -1318,7 +1325,11 @@ padding:12px 25px;
 
 .hero-title{
 
-font-size:2.4rem;
+font-size:clamp(2.1rem, 10.5vw, 2.8rem);
+
+letter-spacing:.08em;
+
+gap:.08em;
 
 }
 
@@ -1351,16 +1362,22 @@ font-size:.9rem;
 <section class="hero">
 
 
-<h1 class="hero-title">
-
-DAKINIC<span class="o"></span>DE
-
-</h1>
+<div class="hero-brand">
 
 
 <div class="subtitle">
 
 PHOTOGRAPHY
+
+</div>
+
+
+<h1 class="hero-title">
+
+DAKINIC<span class="o" aria-hidden="true"></span>DE
+
+</h1>
+
 
 </div>
 
