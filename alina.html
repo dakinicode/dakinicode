@@ -23,6 +23,15 @@ box-sizing:border-box;
 }
 
 
+html,body{
+
+max-width:100%;
+
+overflow-x:clip;
+
+}
+
+
 body{
 
 background:#080808;
@@ -31,7 +40,13 @@ color:white;
 
 font-family:'Raleway',sans-serif;
 
-overflow-x:hidden;
+overflow-x:clip;
+
+overscroll-behavior-x:none;
+
+width:100%;
+
+position:relative;
 
 padding-bottom:120px;
 
@@ -64,6 +79,14 @@ font-weight:100;
 letter-spacing:.45em;
 
 text-transform:uppercase;
+
+max-width:100%;
+
+padding:0 12px;
+
+text-align:center;
+
+box-sizing:border-box;
 
 text-shadow:
 0 0 15px rgba(255,255,255,.25);
